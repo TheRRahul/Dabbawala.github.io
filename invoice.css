@@ -9,7 +9,7 @@
     gap: 130px;
     padding: 136px;
     position: absolute;
-    top: -240px;
+    top: -300px;
     left: 400px;
     background-color: #ffffff;
     border-radius: 20px;
@@ -30,7 +30,7 @@
     /* float: right; */
     margin-left: 2040px;
     position: absolute;
-    margin-top: 637px;
+    margin-top: 528px;
     object-fit: cover;
 }
 
@@ -75,7 +75,7 @@
 
 
 .scan-me span{
-    font-size: 110px;
+    font-size: 80px;
 }
 
 .frame-wrapper {
@@ -184,27 +184,6 @@
 }
 
 
-.scan-me {
-    font-family: "Montserrat", Helvetica;
-    text-align: center;
-    font-size: 47px;
-    font-weight: bold;
-    margin-top: 69px;
-    margin-left: -177px;
-}
-
-.scan-me span:first-child {
-    display: block;
-    font-size: 20px;
-    color: #000; /* Adjust color as per your preference */
-}
-
-.scan-me span:last-child {
-    font-size: 58px;
-    color: #87643a; /* Customize the color if needed */
-    font-weight: bold; /* Optional: Make it bold for better visibility */
-}
-
 
 /*  this is a responsive css  */
 @media screen and (max-width: 3840px) {
@@ -220,38 +199,12 @@
         margin-top: 86px;
     }
 
-.mumbai-dabbawala {
-        height: 500px;
-        width: 500px;
-        top: 154px;
-        right: 77px;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-}
-
-    .scan-me {
-        font-size: 37px;
-        margin-top: 424px;
-        margin-left: -14px;
+    .mumbai-dabbawala {
+    height: 500px;
+    width: 500px;
+    top: 184px;
+    right: 108px;
     }
-
-.scan-me span:first-child {
-    display: block;
-    font-size: 33px;
-    color: #000;
-}
-
-.scan-me span:last-child {
-    font-size: 32px;
-    color: #87643a;
-    font-weight: bold;
-}
-
-.qr_scan {
-
-    display: none;
-}
 
    .refresh-btn {
     bottom: 141px;
@@ -281,11 +234,11 @@
     }
 
     .text-wrapper-3 {
-        font-size: 22px;
+        font-size: 24px;
     }
 
-        .text-wrapper-2 h4 {
-        font-size: 19px;
+    .text-wrapper-2 h4 {
+    font-size: 23px;
     }
 
     .frame-4 {
@@ -411,6 +364,7 @@
         top: 0;
         left: 0;
     }
+
     /* Responsive typography and alignment */
     .scan-me {
         font-size: 20px;
@@ -419,7 +373,6 @@
         text-align: revert;
         margin-bottom: -5px;
     }
-
 
     .frame-5 {
         width: 100%;
