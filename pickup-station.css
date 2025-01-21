@@ -125,6 +125,9 @@ body::before {
 /*      transform: rotate(0deg);*/;
 }
 
+
+
+
 @keyframes curve {
     0% {
         transform: rotate(0deg);
@@ -493,6 +496,29 @@ body::before {
     color: #fff;
     margin-bottom: 83px;
 }
+
+
+.text-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+.text-wrapper h2{
+   white-space: nowrap;
+   padding: 0 6rem;
+   letter-spacing: 1px;
+   animation: move-rtl 3000ms linear infinite;
+}
+
+@keyframes move-rtl{
+    0% {
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
 
 
         /* Mobile Styles */

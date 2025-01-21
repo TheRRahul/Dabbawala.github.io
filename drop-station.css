@@ -392,33 +392,26 @@ button.disabled {
 
 
 /*marqueee*/
-.marquee h2 {
-    width: 100%;
+.text-wrapper{
+    display: flex;
+    justify-content: flex-start;
     overflow: hidden;
-    white-space: nowrap;
-    background: #f0f0f0;
-    animation: marquee 0.1s linear infinite;
-    padding: 5px 0;
+}
+.text-wrapper h2{
+   white-space: nowrap;
+   padding: 0 6rem;
+   letter-spacing: 1px;
+   animation: move-rtl 3000ms linear infinite;
 }
 
-.marquee p {
-    display: inline-block;
-    animation: marquee 0.5s linear infinite;
-    font-size: 16px;
-    color: #ff0000;
-}
-
-@keyframes marquee {
-    from {
-        transform: translateX(100%);
+@keyframes move-rtl{
+    0% {
+        transform: translateX(0px);
     }
-
-    to {
+    100%{
         transform: translateX(-100%);
     }
 }
-
-
 
 
 /*for station show top btm*/
