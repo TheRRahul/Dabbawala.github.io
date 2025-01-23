@@ -1,0 +1,271 @@
+.PICK-TO-DROP {
+  background-color: #fdf5ef;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.PICK-TO-DROP .overlap-group-wrapper {
+  background-color: #fdf5ef;
+  overflow: hidden;
+  width: 1920px;
+  height: 1080px;
+}
+
+.PICK-TO-DROP .overlap-group {
+  position: relative;
+  width: 2244px;
+  height: 1103px;
+  left: -159px;
+}
+
+.PICK-TO-DROP .image {
+  position: absolute;
+  width: 1920px;
+  height: 738px;
+  top: 0;
+  left: 159px;
+}
+
+.PICK-TO-DROP .ellipse {
+  position: absolute;
+  width: 2244px;
+  height: 420px;
+  top: 604px;
+  left: 0;
+  background-color: #fdf5ef;
+  border-radius: 1122.13px/209.81px;
+  filter: blur(100px);
+}
+
+.PICK-TO-DROP .frame {
+  position: absolute;
+  width: 439px;
+  height: 101px;
+  top: 653px;
+  left: 919px;
+}
+
+.PICK-TO-DROP .frame-wrapper {
+  position: absolute;
+  width: 1920px;
+  height: 271px;
+  top: 809px;
+  left: 159px;
+  background-color: #574d41;
+}
+
+.PICK-TO-DROP .div {
+  display: flex;
+  flex-direction: column;
+  width: 765px;
+  align-items: center;
+  position: relative;
+  top: 145px;
+  left: 585px;
+}
+
+.PICK-TO-DROP .text-wrapper {
+  position: relative;
+  align-self: stretch;
+  height: 99.59px;
+  margin-top: -1px;
+  font-family: "Lexend Deca-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #fdf6ec;
+  font-size: 54.9px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.PICK-TO-DROP .text-wrapper-2 {
+  position: relative;
+  align-self: stretch;
+  margin-top: -22px;
+  font-family: "Lexend Deca-Medium", Helvetica;
+  font-weight: 500;
+  color: #ddc993;
+  font-size: 50px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.PICK-TO-DROP .frame-2 {
+  display: flex;
+  flex-direction: column;
+  width: 465px;
+  align-items: center;
+  position: absolute;
+  top: 249px;
+  left: 1544px;
+}
+
+.PICK-TO-DROP .simplification {
+  position: relative;
+  width: 373.04px;
+  height: 615.41px;
+}
+
+.PICK-TO-DROP .div-wrapper {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 237.06px;
+  background-color: #3b352d;
+  border-radius: 14.54px 14.54px 0px 0px;
+  overflow: hidden;
+}
+
+.PICK-TO-DROP .text-wrapper-3 {
+  position: absolute;
+  top: 82px;
+  left: 144px;
+  font-family: "Lexend Deca-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #ddc993;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.PICK-TO-DROP .frame-3 {
+  display: flex;
+  flex-direction: column;
+  width: 465px;
+  align-items: center;
+  position: absolute;
+  top: 251px;
+  left: 220px;
+}
+
+.PICK-TO-DROP .text-wrapper-4 {
+  position: absolute;
+  top: 66px;
+  left: 161px;
+  font-family: "Lexend Deca-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #ddc993;
+  font-size: 53px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+
+
+
+/*this is responsice for 3840*/
+@media (max-width: 3840px){
+    .PICK-TO-DROP .overlap-group-wrapper {
+        width: 0px;
+        width: 100%;
+    }
+
+    .PICK-TO-DROP .div-wrapper {
+        width: 150%;
+        height: 335.06px;
+        bottom: 911px;
+        left: -240px;
+    }
+}
+
+
+
+/*this is responsive css*/
+/*4096px*/
+@media (max-width: 4096px){
+
+.PICK-TO-DROP .overlap-group {
+    width: 100%;
+    height: 100vh;
+    left: 0;
+}
+
+.PICK-TO-DROP .overlap-group-wrapper {
+    width: 4096px;
+    height: 2160px;
+}
+
+.PICK-TO-DROP .frame-wrapper {
+    width: 4096px;
+    height: 450px;
+    top: 1706px;
+    left: 0;
+}
+
+.PICK-TO-DROP .div {
+    width: 4096px;
+    left: 0;
+}
+
+.PICK-TO-DROP .frame-3 {
+    top: 1300px;
+    left: 400px;
+}
+
+.PICK-TO-DROP .frame-2 {
+    top: 1300px;
+    right: 220px !important;
+    left: 3200px;
+}
+
+.PICK-TO-DROP .frame {
+    width: 4096px;
+    height: 227px;
+    top: 1458px;
+    left: 0;
+}
+
+.PICK-TO-DROP .image {
+    width: 4096px;
+    height: 70vh;
+    top: 0;
+    left: 0px;
+}
+
+.PICK-TO-DROP .ellipse {
+    width: 4096px;
+    height: 500px;
+    top: 1258px;
+    left: 0;
+}
+
+.PICK-TO-DROP .simplification {
+    position: relative;
+    width: 856.04px;
+    height: 1428.41px;
+    bottom: 899px;
+}
+
+
+.PICK-TO-DROP .div-wrapper {
+    width: 150%;
+    height: 335.06px;
+    bottom: 911px;
+    left: -110px;
+}
+
+.PICK-TO-DROP .text-wrapper-4 {
+    top: 105px;
+    left: 225px;
+    font-size: 87px;
+}
+
+.PICK-TO-DROP .text-wrapper-3 {
+    top: 105px;
+    left: 140px;
+    font-size: 87px;
+}
+
+.PICK-TO-DROP .text-wrapper {
+    font-size: 80px;
+}
+
+.PICK-TO-DROP .text-wrapper-2 {
+    margin-top: 5px;
+    font-size: 70px;
+}
+
+}
