@@ -60,24 +60,22 @@
     clear: all;
 }
 
-.scan-me {
-    font-family: "Montserrat", Arial, sans-serif;
-    text-align: center;
-    position: absolute;
-    top: 58%;
-    left: 84%;
-    transform: translate(-50%, -50%);
-}
 
-.scan-me .main-text {
+.scan-me {
+    font-family: "Montserrat", Helvetica;
+    text-align: center;
     font-size: 50px;
     font-weight: bold;
-    color: black; /* Adjust color if needed */
+    margin-top: 766px;
+    margin-left: 40px;
+    position: absolute;
 }
 
-.scan-me .sub-text {
-    font-size: 40px;
-    color: #87643a;
+
+
+
+.scan-me span{
+    font-size: 80px;
 }
 
 .frame-wrapper {

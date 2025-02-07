@@ -134,6 +134,22 @@ body::before {
     cursor: not-allowed;
 }
 
+
+
+.fig {
+    position: absolute;
+    /* margin-top: 221px; */
+    /* padding-top: 331px; */
+    margin-top: 428px;
+    margin-left: 1350px;
+    z-index: 111;
+}
+
+.hidden {
+    display: none;
+}
+
+
 .close-btn {
     position: absolute;
     top: 30px;

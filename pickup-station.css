@@ -48,6 +48,20 @@ body::before {
     width: 55%;
 }
 
+
+.fig {
+    position: absolute;
+    /* margin-top: 221px; */
+    /* padding-top: 331px; */
+    margin-top: 428px;
+    margin-left: 1350px;
+    z-index: 111;
+}
+
+.hidden {
+    display: none;
+}
+
 .box2 {
     width: 28%;
     display: flex;

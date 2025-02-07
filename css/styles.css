@@ -1,3 +1,7 @@
+body{
+    margin: 0;
+}
+
 .PICK-TO-DROP {
   background-color: #fdf5ef;
   display: flex;
@@ -22,8 +26,8 @@
 
 .PICK-TO-DROP .image {
   position: absolute;
-  width: 1920px;
-  height: 738px;
+  width: 100%;
+  height: 70vh;
   top: 0;
   left: 159px;
 }
@@ -156,20 +160,6 @@
 
 
 
-/*this is responsice for 3840*/
-@media (max-width: 3840px){
-    .PICK-TO-DROP .overlap-group-wrapper {
-        width: 0px;
-        width: 100%;
-    }
-
-    .PICK-TO-DROP .div-wrapper {
-        width: 150%;
-        height: 335.06px;
-        bottom: 911px;
-        left: -240px;
-    }
-}
 
 
 
@@ -217,13 +207,13 @@
     top: 1458px;
     left: 0;
 }
-
+/*
 .PICK-TO-DROP .image {
     width: 4096px;
     height: 70vh;
     top: 0;
     left: 0px;
-}
+}*/
 
 .PICK-TO-DROP .ellipse {
     width: 4096px;
@@ -268,4 +258,86 @@
     font-size: 70px;
 }
 
+}
+
+
+/*this is responsice for 3840*/
+@media (max-width: 1920px){
+       .PICK-TO-DROP .image {
+        position: absolute;
+        width: 87%;
+        height: 59vh;
+    }
+
+   
+
+    .PICK-TO-DROP .overlap-group-wrapper {
+        /* width: 4096px; */
+        height: 100vh;
+    }
+
+    .PICK-TO-DROP .simplification {
+        position: relative;
+        width: 470px;
+        height: 936.41px;
+        bottom: 1230px;
+        left: -290px;
+    }
+
+    .PICK-TO-DROP .ellipse {
+        width: 100%;
+        top: 454px;
+    }
+
+    .PICK-TO-DROP .frame-wrapper {
+        width: 100%;
+        top: 869px;
+    }
+
+    .PICK-TO-DROP .div-wrapper {
+        width: 78%;
+        height: 171.06px;
+        bottom: 1327px;
+        left: -240px;
+    }
+
+    .PICK-TO-DROP .text-wrapper-4 {
+        top: 55px;
+        left: 124px;
+        font-size: 40px;
+    }
+
+    .PICK-TO-DROP .frame-2 {
+        top: 1300px;
+        right: 220px !important;
+        left: 1646px;
+    }
+
+    .PICK-TO-DROP .text-wrapper-3 {
+        top: 63px;
+        left: 90px;
+        font-size: 40px;
+    }
+
+    .PICK-TO-DROP .div {
+        width: 100%;
+        top: 65px;
+        left: 0;
+    }
+
+    .PICK-TO-DROP .text-wrapper {
+        font-size: 44px;
+    }
+
+    .PICK-TO-DROP .text-wrapper-2 {
+        margin-top: -32px;
+        font-size: 34px;
+    }
+
+    .PICK-TO-DROP .frame {
+        width: 33%;
+        height: 227px;
+        top: 655px;
+        left: 643px;
+    }
 }

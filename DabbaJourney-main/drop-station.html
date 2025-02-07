@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="images/fevi.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Station Selector</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="drop-station.css">
+</head>
+<body>
+
+    <audio id="pageLoadAudio" src="sound/voice-station.mp3" autoplay preload="auto"></audio>
+
+    <div class="container">
+        <div class="box2 heading para">
+            <h2>SELECT YOUR DROP STATION</h2>
+            <p>Select a drop station where the dabbawala will deliver your tiffin box to its final destination. At the drop station, the tiffins are carefully sorted based on their delivery codes and dispatched for last-mile delivery, ensuring they reach the right person on time.</p>
+            
+        </div>
+
+        <div class="box box3 station-sel">
+            <img src="images/stations-select.svg" alt="Image 2">
+            <!-- <img src="images/arrowgif.gif" class="gifarrow"> -->
+            
+
+            <!-- This stays at the top of your body element -->
+            <div id="stationDisplayTop" class="station-display1">
+                <svg viewBox="0 0 500 100" xmlns="#">
+                    <path id="curvedPath" d="M50,80 C150,10 350,10 450,80" fill="transparent" stroke="none"/>
+                    <text>
+                        <textPath href="#curvedPath" startOffset="50%" text-anchor="middle" id="curvedStationText"></textPath>
+                    </text>
+                </svg>
+            </div>
+
+            <div class="text-overlay" id="dropStationLabel" class="station-label pickup-station" onclick="openPopup()">
+
+                    <div class="text-wrapper">
+                        <h2>DROP STATION ?</h2>
+                        <h2>DROP STATION ?</h2>
+                        <h2>DROP STATION ?</h2>
+                        <h2>DROP STATION ?</h2>
+                        <h2>DROP STATION ?</h2>
+                        <h2>DROP STATION ?</h2>
+                        <h2>DROP STATION ?</h2>
+                        <h2>DROP STATION ?</h2>
+                        <h2>DROP STATION ?</h2>
+                        <h2>DROP STATION ?</h2>
+                        <h2>DROP STATION ?</h2>
+                    </div>
+            </div>
+
+            <!-- Display selected station at the bottom -->
+            <div id="stationDisplayBottom" class="station-display2">
+                <svg viewBox="0 0 500 100" xmlns="#">
+                    <path id="curvedPathBottom" d="M50,20 C150,90 350,90 450,20" fill="transparent" stroke="none" />
+                    <text>
+                        <textPath href="#curvedPathBottom" startOffset="50%" text-anchor="middle" id="curvedStationTextBottom"></textPath>
+                    </text>
+                </svg>
+            </div>
+        </div>
+
+
+        <div class="box4 zoom-box">
+            <button id="startJourneyButton" onclick="TravelPage()">START JOURNEY&nbsp;&nbsp; <img class="arrow" src="images/arrow-1.png" /></button>
+        </div>
+    </div>
+
+
+<!-- stations selection menu-->
+
+    <div class="popup-overlay" id="popupOverlay" style="display: none">
+        <div class="popup-content">
+            
+            <!-- Inside the Popup Content -->
+            <div class="popup-section">
+                <div class="line">
+                    <h3>Western Line</h3>
+                    <button data-station="churchgate" data-marathi="चर्चगेट">CHURCHGATE</button>
+                    <button data-station="dadar" data-marathi="दादर">DADAR</button>
+                    <button data-station="bandra" data-marathi="वांद्रे">BANDRA</button>
+                    <button data-station="andheri" data-marathi="अंधेरी">ANDHERI</button>
+                    <button data-station="borivali" data-marathi="बोरिवली">BORIVALI</button>
+                    <button data-station="miraroad" data-marathi="मीरा रोड">MIRA ROAD</button>
+                    <button data-station="virar" data-marathi="विरार">VIRAR</button>
+                </div>
+                <div class="line">
+                    <h3>Central Line</h3>
+                    <button data-station="csmt" data-marathi="छत्रपती शिवाजी महाराज ट.">CSMT</button>
+                    <button data-station="byculla" data-marathi="भायखळा">BYCULLA</button>
+                    <button data-station="kurla" data-marathi="कुर्ला">KURLA</button>
+                    <button data-station="ghatkopar" data-marathi="घाटकोपर">GHATKOPAR</button>
+                    <button data-station="thane" data-marathi="ठाणे">THANE</button>
+                    <button data-station="dombivali" data-marathi="डोंबिवली">DOMBIVALI</button>
+                </div>
+                <div class="line">
+                    <h3>Harbor Line</h3>
+                    <button data-station="wadala" data-marathi="वडाळा">WADALA</button>
+                    <button data-station="vashi" data-marathi="वाशी">VASHI</button>
+                </div>
+            </div>
+
+            <button class="go-back" onclick="closePopup()">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </button>
+        </div>
+    </div>
+<!-- stations selection menu end -->
+
+
+
+
+    <!-- translate -->
+
+<script>
+    const translations = {
+        "Select a drop station where the dabbawala will deliver your tiffin box to its final destination. At the drop station, the tiffins are carefully sorted based on their delivery codes and dispatched for last-mile delivery, ensuring they reach the right person on time.": "तुमचा ड्रॉप स्टेशन निवडा जिथे डबेवाला तुमचा डबा अंतिम ठिकाणी पोहोचवेल. ड्रॉप स्टेशनवर डबे त्यांच्या डिलिव्हरी कोडनुसार व्यवस्थित विभागले जातात व अंतिम वितरणासाठी पाठवले जातात, ज्यामुळे डबा योग्य व्यक्तीपर्यंत वेळेत पोहोचतो.",
+        "SELECT YOUR DROP STATION" : "आपले ड्रॉप स्टेशन निवडा",
+        "Western Line":"पश्चिम मार्ग",
+        "Central Line":"मध्य मार्ग",
+        "Harbor Line":"हार्बर मार्ग",
+        "PICK UP STATION": "वाहतूक स्टेशन",
+        "DROP STATION ?": "स्थानक निवडा ?",
+        "SELECT A DROP STATION": "शेवटचे स्टेशन निवडा",
+        "CSMT":"छत्रपती शिवाजी महाराज ट.",
+        "DADAR": "दादर",
+        "KURLA": "कुर्ला",
+        "THANE": "ठाणे",
+        "WADALA": "वडाळा",
+        "VASHI": "वाशी",
+        "CHURCHGATE": "चर्चगेट",
+        "BANDRA": "वांद्रे",
+        "ANDHERI": "अंधेरी",
+        "DOMBIVALI":"डोंबिवली",
+        "GHATKOPAR":"घाटकोपर",
+        "BYCULLA":"भायखळा",
+        "VIRAR":"विरार",
+        "MIRA ROAD":"मीरा रोड",
+        "BORIVALI":"बोरिवली",
+        "PICK UP STATION": "वाहतूक स्टेशन",
+        "NEXT": "पुढे जा",
+        "START JOURNEY":"प्रारंभ यात्रा "
+    };
+
+    // Specifically update the `<h2>` with the text containing <br>
+        // const h2Element = document.querySelector('h2');
+        // if (h2Element && h2Element.innerHTML === "SELECT YOUR<br>DROP STATION") {
+        //     h2Element.innerHTML = "आपले ड्रॉप स्टेशन<br> निवडा"; // Marathi translation with `<br>`
+        // }
+
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    function translateToMarathi() {
+        if (getQueryParam('lang') === 'marathi') {
+            document.querySelectorAll('h2, p, h3, a, button').forEach(element => {
+                const originalText = element.textContent.trim();
+                if (translations[originalText]) {
+                    element.textContent = translations[originalText];
+                }
+            });
+        }
+    }
+
+    // Call the translation function on page load
+    translateToMarathi();
+</script>
+<!--  -->
+
+
+<script>
+// Track if a station is selected
+let stationSelected = false;
+
+// Open the popup
+function openPopup() {
+    const popupOverlay = document.getElementById('popupOverlay');
+    popupOverlay.style.display = 'flex';
+
+    // Add an event listener to detect clicks outside the popup content
+    popupOverlay.addEventListener('click', handleOutsideClick);
+}
+
+// Close the popup
+function closePopup() {
+    const popupOverlay = document.getElementById('popupOverlay');
+    popupOverlay.style.display = 'none';
+
+    // Remove the event listener after closing the popup
+    popupOverlay.removeEventListener('click', handleOutsideClick);
+}
+
+// Handle station selection and update the page
+document.querySelectorAll('.popup-section button').forEach(button => {
+    button.addEventListener('click', function() {
+        const selectedDropStation = this.getAttribute('data-station'); // Get the selected station's name
+        const lang = getQueryParam('lang'); // Check for language preference
+
+        if (lang === 'marathi') {
+            // Update the label to Marathi if language is Marathi
+            const marathiName = this.getAttribute('data-marathi');
+            document.getElementById('dropStationLabel').textContent = marathiName;
+        } else {
+            document.getElementById('dropStationLabel').textContent = selectedDropStation; // Default to English
+        }
+
+        // Store the selected station in localStorage
+        localStorage.setItem('selectedDropStation', selectedDropStation);
+
+        // Set the flag to true when a station is selected
+        stationSelected = true;
+
+        // Enable the "START JOURNEY" button
+        document.getElementById('startJourneyButton').classList.add('active');
+
+        // Close the popup after selecting the station
+        closePopup();
+    });
+});
+
+// Function to get URL query parameters
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+// Function to handle the start journey button
+function TravelPage() {
+    if (stationSelected) {
+        const lang = getQueryParam('lang');
+        window.location.href = `travel.html${lang ? '?lang=' + lang : ''}`; // Redirect to the travel page
+    }
+}
+
+// Function to handle clicks outside the popup content
+function handleOutsideClick(event) {
+    const popupContent = document.querySelector('.popup-content');
+    if (!popupContent.contains(event.target)) {
+        closePopup();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const selectedPickupStation = localStorage.getItem('selectedPickupStation');
+
+    if (selectedPickupStation) {
+        document.querySelectorAll('.popup-section button').forEach(button => {
+            if (button.getAttribute('data-station') === selectedPickupStation) {
+                button.classList.add('disabled');
+                button.disabled = true; // Disable the button
+            }
+        });
+    }
+});
+
+</script>
+
+
+
+
+<!-- popup station list code -->
+
+<script>
+
+    // Open the popup
+    function openPopup() {
+        const popupOverlay = document.getElementById('popupOverlay');
+        popupOverlay.style.display = 'flex';
+
+        // Add an event listener to detect clicks outside the popup content
+        popupOverlay.addEventListener('click', handleOutsideClick);
+    }
+
+    // Close the popup
+    function closePopup() {
+        const popupOverlay = document.getElementById('popupOverlay');
+        popupOverlay.style.display = 'none';
+
+        // Remove the event listener after closing the popup
+        popupOverlay.removeEventListener('click', handleOutsideClick);
+    }
+
+    // Function to handle clicks outside the popup content
+    function handleOutsideClick(event) {
+        const popupContent = document.querySelector('.popup-content');
+        if (!popupContent.contains(event.target)) {
+            closePopup();
+        }
+    }
+</script>
+<!-- popup station list code end-->
+
+
+
+
+
+
+          <!-- this is a animation effects -->
+ <style>
+    /* Element to animate */
+    .zoom-box {
+      animation: zoomIn 2s ease-in-out;
+    }
+
+    /* Keyframes for zoom-in animation */
+    @keyframes zoomIn {
+      0% {
+        transform: scale(0); /* Start at 0 size */
+        opacity: 0;          /* Completely transparent */
+      }
+      50% {
+        transform: scale(1.2); /* Slight overshoot */
+        opacity: 1;            /* Fully visible */
+      }
+      100% {
+        transform: scale(1);   /* Final size */
+      }
+    }
+
+
+  </style>
+
+
+<script>
+function updateSelectedStation(stationName) {
+    // Translate the station name to Hindi for the top display
+    const stationNameHindi = translateToHindi(stationName);
+
+    // Update the top text with the Hindi translation
+    const curvedStationTextTop = document.getElementById("curvedStationText");
+    curvedStationTextTop.textContent = stationNameHindi;
+
+    // Update the bottom text with the English station name
+    const curvedStationTextBottom = document.getElementById("curvedStationTextBottom");
+    curvedStationTextBottom.textContent = stationName;
+
+    // Log for debugging
+    console.log(`Top (Hindi): ${stationNameHindi}, Bottom (English): ${stationName}`);
+}
+
+function translateToHindi(stationName) {
+    // Create a translation mapping for station names to Hindi
+    const translationMap = {
+        "csmt": "छत्रपति शिवाजी महाराज ट.",
+        "dadar": "दादर",
+        "kurla": "कुर्ला",
+        "thane": "ठाणे",
+        "wadala": "वडाला",
+        "vashi": "वाशी",
+        "churchgate": "चर्चगेट",
+        "bandra": "बांद्रा",
+        "andheri": "अंधेरी",
+        "dombivali": "डोंबिवली",
+        "ghatkopar": "घाटकोपर",
+        "byculla": "भायखला",
+        "virar": "विरार",
+        "miraroad": "मीरा रोड",
+        "borivali": "बोरीवली"
+        // Add more stations as needed
+    };
+
+    return translationMap[stationName] || stationName; // Default to the original name if not found
+}
+
+document.querySelectorAll('.popup-section button').forEach(button => {
+    button.addEventListener('click', function () {
+        const selectedStation = this.getAttribute('data-station'); // Get selected station in English
+
+        // Update the displays
+        updateSelectedStation(selectedStation);
+
+        // Close the popup after selection
+        closePopup();
+    });
+});
+</script>
+
+
+<script>
+  // Function to play the audio
+  function playAudio(audioFile) {
+    const audio = document.getElementById('pageLoadAudio');
+    audio.src = audioFile;  // Set the audio file based on the parameter
+    audio.play().catch(error => {
+      console.warn('Autoplay blocked by browser. Audio did not play.', error);
+    });
+  }
+
+  // Check for lang query parameter and decide which audio to play
+  window.addEventListener('load', () => {
+    const urlParams = new URLSearchParams(window.location.search);  // Get URL query parameters
+    const lang = urlParams.get('lang');  // Get the value of 'lang'
+
+    // Determine the audio file based on the lang parameter
+    let audioFile = 'sound/voice-station.mp3';  // Default audio file
+    if (lang === 'marathi') {
+      audioFile = 'sound/voice-station-marathi.mp3';  // Marathi audio file if lang=marathi
+    }
+
+    // Play the audio immediately
+    playAudio(audioFile);
+
+    // Set an interval to play the sound every 10 seconds (10000ms)
+    setInterval(() => {
+      playAudio(audioFile);
+    }, 10000);  // 10000ms = 10 seconds
+  });
+</script>
+
+</body>
+</html>

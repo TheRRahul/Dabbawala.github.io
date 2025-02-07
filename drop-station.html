@@ -8,6 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="drop-station.css">
+    <script>
+       // Set the time for redirect (10 minutes = 600,000 milliseconds)
+        setTimeout(function() {
+            window.location.href = 'index.html'; // Redirect to index.html
+        }, 600000); // 10 minutes
+  </script>
 </head>
 <body>
 
@@ -20,9 +26,15 @@
             
         </div>
 
+        <div class="fig">
+                <img src="images/finger.gif" id="finger">
+            </div>
+
+            
+
         <div class="box box3 station-sel">
             <img src="images/stations-select.svg" alt="Image 2">
-            <img src="images/arrowgif.gif" class="gifarrow">
+            <!-- <img src="images/arrowgif.gif" class="gifarrow"> -->
             
 
             <!-- This stays at the top of your body element -->
@@ -36,20 +48,7 @@
             </div>
 
             <div class="text-overlay" id="dropStationLabel" class="station-label pickup-station" onclick="openPopup()">
-
-                    <div class="text-wrapper">
-                        <h2>DROP STATION ?</h2>
-                        <h2>DROP STATION ?</h2>
-                        <h2>DROP STATION ?</h2>
-                        <h2>DROP STATION ?</h2>
-                        <h2>DROP STATION ?</h2>
-                        <h2>DROP STATION ?</h2>
-                        <h2>DROP STATION ?</h2>
-                        <h2>DROP STATION ?</h2>
-                        <h2>DROP STATION ?</h2>
-                        <h2>DROP STATION ?</h2>
-                        <h2>DROP STATION ?</h2>
-                    </div>
+                <h2>DROP STATION ?</h2>
             </div>
 
             <!-- Display selected station at the bottom -->
@@ -61,7 +60,13 @@
                     </text>
                 </svg>
             </div>
+
+
+            
         </div>
+
+
+        
 
 
         <div class="box4 zoom-box">
@@ -410,6 +415,28 @@ document.querySelectorAll('.popup-section button').forEach(button => {
       playAudio(audioFile);
     }, 10000);  // 10000ms = 10 seconds
   });
+</script>
+
+<!--  -->
+
+<script>
+    function toggleFinger() {
+    const fingerElement = document.getElementById('finger');
+
+    // Show for 10 seconds
+    setTimeout(() => {
+        fingerElement.classList.add('hidden');
+        // After 5 minutes, enable it again
+        setTimeout(() => {
+            fingerElement.classList.remove('hidden');
+            toggleFinger(); // Start the cycle again
+        }, 300000); // 5 minutes = 300000 milliseconds
+    }, 10000); // 10 seconds = 10000 milliseconds
+}
+
+// Start the cycle when the page loads
+window.onload = toggleFinger;
+
 </script>
 
 </body>

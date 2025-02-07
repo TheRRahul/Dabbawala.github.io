@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="images/fevi.png">
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <audio id="pageLoadAudio" src="sound/bike-bell.mp3" autoplay preload="auto"></audio>
+
+  <body>
+    <div class="PICK-TO-DROP">
+      <div class="overlap-group-wrapper">
+        <div class="overlap-group">
+          <img class="image" src="images/bg_Vector.svg" />
+          <div class="ellipse"></div>
+          <img class="frame" src="images/frame-logo.svg" />
+          <div class="frame-wrapper">
+
+            <div class="div">
+              <div class="text-wrapper">A Day With Dabbawala Tours</div>
+              <div class="text-wrapper-2">डब्बेवाला टूर - एक दिवस त्यांच्यासोबत</div>
+            </div>
+          </div>
+          <div class="frame-2">
+            <img class="simplification" src="images/simplifications.svg" />
+            <div class="div-wrapper">
+              <a href="do-you-know.html" style="text-decoration: none;">
+              <div class="text-wrapper-3">ENGLISH</div>
+              </a>
+            </div>
+          </div>
+          <div class="frame-3">
+            <img class="simplification" src="images/simplifications.svg" />
+            <div class="div-wrapper">
+              <a class="marathi" onclick="navigateToPage('marathi')">
+              <div class="text-wrapper-4">मराठी</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- marathi trans -->
+<script>
+  function navigateToPage(language) {
+    const url = language === 'marathi' ? 'do-you-know.html?lang=marathi' : 'do-you-know.html';
+    window.location.href = url;
+  }
+</script>
+
+
+<script>
+  // Function to play the audio
+  function playAudio() {
+    const audio = document.getElementById('pageLoadAudio');
+    audio.play().catch(error => {
+      console.warn('Autoplay blocked by browser. Audio did not play.', error);
+    });
+  }
+
+  // Try to autoplay the audio on page load
+  window.addEventListener('load', () => {
+    // Play immediately on page load
+    playAudio();
+
+    // Set an interval to play the sound every 10 seconds (10000ms)
+    setInterval(() => {
+      playAudio();
+    }, 120000);  // 2min
+  });
+</script>
+
+  </body>
+</html>
