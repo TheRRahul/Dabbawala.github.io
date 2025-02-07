@@ -27,19 +27,22 @@
 
 .qr_scan {
     width: 1095px;
-    /* float: right; */
-    margin-left: 2040px;
+    float: left;
+    margin-left: -1116px;
     position: absolute;
-    margin-top: 640px;
+    margin-top: -400px;
     object-fit: cover;
 }
 
 .scan_div {
-/*    position: absolute;*/
-    width: 100%x;
-    height: 401px;
+    /* position: absolute; */
+    width: 100% x;
+    height: 427px;
     top: 667px;
-/*    left: 213px;*/
+    /* left: 213px; */
+    float: right;
+    left: 13px;
+    margin: 446px 446px 0px 0px;
 }
 
 .text-wrapper h2{
@@ -71,7 +74,7 @@
     position: absolute;
 }
 
-
+    
 
 
 .scan-me span{
@@ -168,6 +171,11 @@
   border-color: #f4923d;
 }
 
+.qr-code {
+    width: 600px;
+    height: 600px;
+}
+
 
 /* Shake animation */
 @keyframes shake {
@@ -185,6 +193,7 @@
 
 
 
+
 /*  this is a responsive css  */
 @media screen and (max-width: 3840px) {
   .frame-2 {
@@ -198,6 +207,20 @@
         font-size: 42px;
         margin-top: 86px;
     }
+
+    .qr-code {
+        width: 400px;
+        height: 400px;
+    }
+
+    .qr_scan {
+    width: 423px;
+    float: left;
+    margin-left: -8px;
+    position: absolute;
+    margin-top: -399px;
+    object-fit: cover;
+}
 
     .mumbai-dabbawala {
     height: 500px;
@@ -234,11 +257,11 @@
     }
 
     .text-wrapper-3 {
-        font-size: 24px;
+        font-size: 21px;
     }
 
     .text-wrapper-2 h4 {
-    font-size: 23px;
+        font-size: 20px;
     }
 
     .frame-4 {
