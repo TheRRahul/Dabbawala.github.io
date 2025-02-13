@@ -69,13 +69,16 @@
     text-align: center;
     font-size: 50px;
     font-weight: bold;
-    margin-top: 766px;
-    margin-left: 40px;
+    margin-top: 173px;
+    margin-left: 65px;
     position: absolute;
 }
 
     
-
+.scan-wd{
+    width: 10%;
+    height: 10%;
+}
 
 .scan-me span{
     font-size: 80px;
@@ -169,11 +172,6 @@
   border-radius: 9.94px;
   border: 4.42px solid;
   border-color: #f4923d;
-}
-
-.qr-code {
-    width: 600px;
-    height: 600px;
 }
 
 
@@ -431,5 +429,53 @@
             width: 60px;
             height: 60px;
         }
+    }
+}
+
+
+
+/*qr code res*/
+.qr-code {
+    width: 750px;
+    height: 750px;
+}
+
+/* For 4K UHD screens (4096x2160) */
+@media (max-width: 4096px) {
+    .qr-code {
+        width: 750px;
+        height: 750px;
+    }
+}
+
+/* For Full HD screens (1920x1080) */
+@media (max-width: 1920px) {
+    .qr-code {
+        width: 750px;
+        height: 750px;
+    }
+}
+
+/* For HD screens (1280x720) */
+@media (max-width: 1280px) {
+    .qr-code {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+/* For Tablets (1024px wide) */
+@media (max-width: 1024px) {
+    .qr-code {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* For Mobile screens */
+@media (max-width: 768px) {
+    .qr-code {
+        width: 150px;
+        height: 150px;
     }
 }

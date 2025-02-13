@@ -32,7 +32,7 @@
         </div>
 
             <div class="fig">
-                <img src="images/finger.gif" id="finger">
+                <img src="images/finger-img.png" id="finger" class="fig-width bouncy">
             </div>
 
         <!--  -->
@@ -53,12 +53,9 @@
                 </svg>
             </div>
 
-
             <div class="text-overlay" id="pickupStationLabel" onclick="openPopup()">
                     <h2>PICK UP STATION ?</h2>
             </div>
-
-            
 
             <!-- Display selected station at the bstations-selectottom -->
             <div id="stationDisplayBottom" class="station-display2 curve-text">
@@ -429,27 +426,31 @@ document.querySelectorAll('.popup-section button').forEach(button => {
 
 
 
+
 <!--  -->
 
 <script>
     function toggleFinger() {
-    const fingerElement = document.getElementById('finger');
+        const fingerElement = document.getElementById('finger');
 
-    // Show for 10 seconds
-    setTimeout(() => {
+        // Initially hide the element
         fingerElement.classList.add('hidden');
-        // After 5 minutes, enable it again
+
+        // Show the element after 5 seconds
         setTimeout(() => {
             fingerElement.classList.remove('hidden');
-            toggleFinger(); // Start the cycle again
-        }, 300000); // 5 minutes = 300000 milliseconds
-    }, 10000); // 10 seconds = 10000 milliseconds
-}
+            
+            // Hide the element after 10 seconds
+            setTimeout(() => {
+                fingerElement.classList.add('hidden');
+                toggleFinger(); // Repeat the process
+            }, 10000); 
+        }, 5000); 
+    }
 
-// Start the cycle when the page loads
-window.onload = toggleFinger;
-
+    window.onload = toggleFinger;
 </script>
+
 
 </body>
 </html>

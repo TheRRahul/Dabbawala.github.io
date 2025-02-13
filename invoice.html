@@ -13,10 +13,14 @@
             window.location.href = 'index.html'; // Redirect to index.html
         }, 600000); // 10 minutes
   </script>
+
 </head>
 <body>
 
   <!-- main section -->
+
+    
+  
     <div class="background">
 
       <!-- <div>
@@ -56,14 +60,12 @@
         
         <!-- <img class="mumbai-dabbawala zoom-box" src="images/scan-me.svg" /> -->
         <div class="scan_div ">
-          <div class="qr-code" id="qrcode">
-            <p class="scan-me">
-                <span>Scan Me</span> <br> <span style="font-size:45px; color: #87643a;">To Start Your Dabba Service</span>
-            </p>
+          <div class="qr-code" >
+            <div id="qrcode"></div>
           </div>
-          <!-- <div>
-            <p class="scan-me"><span>Scan Me</span> <br>To Start Your Dabba Service</p>
-          </div> -->
+          <p class="scan-me">
+            <span>Scan Me</span> <br> <span style="font-size:45px; color: #87643a;">To Start Your Dabba Service</span>
+          </p>
           <img src="images/scan-me-here.gif" class="qr_scan">
         </div>
 
@@ -84,7 +86,7 @@
             </div>
         </div>
 
-    </div>
+
     
   <!-- main section end -->
 
@@ -127,8 +129,6 @@
 
         // QR code options
         const options = {
-            width: window.innerWidth < 768 ? 150 : 750, // Set width to 300px for small screens (mobile) and 750px for larger screens
-            height: window.innerWidth < 768 ? 150 : 750, // Same for height
             color: {
                 dark: "#574d41", // Dark color for the QR code itself
                 light: "#00000000" // Transparent background
@@ -146,13 +146,7 @@
             // Append the QR code canvas to the div
             qrCodeDiv.appendChild(canvas);
 
-            // Add the shake effect every 10 seconds for 2 seconds duration
-            // setInterval(() => {
-            //     qrCodeDiv.classList.add('shake');
-            //     setTimeout(() => {
-            //         qrCodeDiv.classList.remove('shake');
-            //     }, 3000); 
-            // }, 5000); 
+            
         });
     });
 </script>
@@ -376,8 +370,8 @@ document.addEventListener('DOMContentLoaded', function () {
   <style>
     /* Circle element */
     .circle {
-/*      animation: spinOnce 2s ease-in-out forwards;*/
-animation: spin 5s linear ;
+      animation: spinOnce 2s ease-in-out forwards ; 
+      animation: spin 5s linear infinite;
     }
 
     /* Keyframes for continuous spinning */

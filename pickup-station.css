@@ -48,7 +48,6 @@ body::before {
     width: 55%;
 }
 
-
 .fig {
     position: absolute;
     /* margin-top: 221px; */
@@ -57,6 +56,35 @@ body::before {
     margin-left: 1350px;
     z-index: 111;
 }
+
+.fig-width{
+    width: 150px;
+    }
+
+    /* Bouncy image class */
+.bouncy {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* Keyframes for bounce effect */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 
 .hidden {
     display: none;
@@ -70,6 +98,7 @@ body::before {
     align-items: center;
     text-align: center;
     margin-top: 1420px;
+    margin-left: 170px;
 }
 
 .box4 {
@@ -196,7 +225,7 @@ body::before {
 
 .station-display1 svg {
     width: 65%;
-    height: auto;
+    height: 100vh;
 }
 
 .station-display1 text {
@@ -767,4 +796,70 @@ body::before {
         padding: 15px 30px;
         font-size: 11px;
     }
+}
+
+@media screen and (max-width: 1280px) and (max-height: 720px) {
+.box2 {
+    margin-left: 0px;
+}
+.heading h2 {
+        font-size: 20px;
+        width: 326px;
+    }
+    .para p {
+    padding: 0px 0px;
+    font-size: 15px;
+}
+.box2 {
+        margin-top: 398px;
+    }
+        .box4 {
+        margin-top: 470px;
+    }
+        #nextButton {
+        padding: 14px 29px;
+        font-size: 17px;
+    }
+    .station-sel h2 {
+        font-size: 23px;
+        margin-bottom: 26px;
+    }
+        .popup-content {
+        width: 64%;
+    }
+    .line h3 {
+        font-size: 20px;
+    }
+    .line button {
+        width: 89%;
+        padding: 8px;
+        font-size: 14px;
+    }
+    .popup-content {
+        width: 53%;
+    }
+    #stationDisplayTop {
+        margin-top: -267px;
+    }
+    #stationDisplayBottom {
+        margin-top: 330px;
+    }
+    .text-overlay {
+        font-size: 26px;
+    }
+    .arrow {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        margin-right: -2px;
+    }
+    .fig {
+        margin-top: 154px;
+        margin-left: 424px;
+        z-index: 111;
+    }
+       .fig-width {
+        width: 165px;
+    }
+
 }
