@@ -582,11 +582,11 @@ body::before {
     }
 
     .box2 {
-        width: 100%;
-        margin-top: -23px;
+        width: 96%;
+        margin-top: 688px;
+        margin-left: 0px;
         margin-bottom: 47px;
         background-color: rgba(255, 255, 255, 0.4);
- /* Light transparent white */;
     }
 
     .box4 {
@@ -705,6 +705,7 @@ body::before {
 }
 .box2 {
     margin-top: 688px;
+    margin-left: 76px;
 }
 .para p {
     font-size: 20px;
@@ -756,6 +757,11 @@ body::before {
 #stationDisplayBottom {
     margin-top: 538px;
 }
+    .fig {
+        margin-top: 200px;
+        margin-left: 703px;
+        z-index: 111;
+    }
 }
 
 
@@ -861,5 +867,4 @@ body::before {
        .fig-width {
         width: 165px;
     }
-
 }

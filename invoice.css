@@ -26,13 +26,14 @@
 
 
 .qr_scan {
-    width: 1095px;
+    width: 22%;
     float: left;
-    margin-left: -1116px;
+    margin-left: -830px;
     position: absolute;
-    margin-top: -400px;
+    margin-top: -476px;
     object-fit: cover;
 }
+
 
 .scan_div {
     /* position: absolute; */
@@ -63,26 +64,36 @@
     clear: all;
 }
 
-
-.scan-me {
-    font-family: "Montserrat", Helvetica;
-    text-align: center;
-    font-size: 50px;
-    font-weight: bold;
-    margin-top: 173px;
-    margin-left: 65px;
-    position: absolute;
-}
-
     
 .scan-wd{
     width: 10%;
     height: 10%;
 }
 
-.scan-me span{
-    font-size: 80px;
+/* Styling for the "Scan Me" text */
+.scan-me {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #574d41; /* Default text color */
 }
+
+/* Style for "Scan Me" */
+.scan-me .scan-text {
+    font-size: 24px;
+    color: #574d41;
+}
+
+/* Style for "To Start Your Dabba Service" */
+.scan-me .dabba-text {
+    font-size: 28px;
+    color: #87643a;
+    font-weight: bold;
+    display: block; /* Places text on a new line */
+    margin-top: 5px;
+}
+
 
 .frame-wrapper {
   display: flex;
@@ -206,19 +217,15 @@
         margin-top: 86px;
     }
 
-    .qr-code {
-        width: 400px;
-        height: 400px;
+    .qr_scan {
+        width: 23%;
+        float: left;
+        margin-left: -460px;
+        position: absolute;
+        margin-top: -276px;
+        object-fit: cover;
     }
 
-    .qr_scan {
-    width: 423px;
-    float: left;
-    margin-left: -8px;
-    position: absolute;
-    margin-top: -399px;
-    object-fit: cover;
-}
 
     .mumbai-dabbawala {
     height: 500px;
@@ -282,6 +289,11 @@
     height: 250px;
     top: -14px;
     left: 104px;
+}
+
+.scan_div {
+
+    margin: 240px 150px 0px 0px;
 }
 
 }
@@ -387,13 +399,6 @@
     }
 
     /* Responsive typography and alignment */
-    .scan-me {
-        font-size: 20px;
-        margin-top: 365px;
-        margin-left: 0;
-        text-align: revert;
-        margin-bottom: -5px;
-    }
 
     .frame-5 {
         width: 100%;
@@ -435,47 +440,88 @@
 
 
 /*qr code res*/
-.qr-code {
-    width: 750px;
-    height: 750px;
-}
+@media screen and (max-width: 1280px) {
 
-/* For 4K UHD screens (4096x2160) */
-@media (max-width: 4096px) {
-    .qr-code {
-        width: 750px;
-        height: 750px;
+    .image {
+        width: 120px;
+        height: 120px;
+        top: -192px;
+        left: 50px;
+    }
+.text-wrapper h2 {
+        font-size: 25px;
+    }
+    .frame-2 {
+        padding: 38px;
+        width: 87%;
+        top: -220px;
+        left: 142px;
+    }
+    .qr_scan {
+        margin-top: -143px;
+        margin-left: -283px;
+    }
+    .text-wrapper-3 {
+        font-size: 15px;
+    }
+.text-wrapper-2 h4 {
+        font-size: 14px;
+    }
+    .frame-2 {
+        padding: 38px;
+        width: 67%;
+        top: -220px;
+        left: 142px;
+    }
+        .footer-text {
+        font-size: 42px;
+        margin-top: 50px;
+    }
+    .scan_div {
+        margin: 127px 80px 0px 0px;
+    }
+        .refresh-btn {
+        bottom: 97px;
+        right: 133px;
+    }
+    .refresh-btn img {
+        width: 100px;
+        height: 100px;
+    }
+    .scan-me .dabba-text {
+    font-size: 19px;
+    }
+    .text-wrapper h2 {
+    height: 14px;
+}
+.frame-4 {
+        width: 329px;
+    }
+    .frame-3 {
+        width: 100%;
     }
 }
 
-/* For Full HD screens (1920x1080) */
-@media (max-width: 1920px) {
-    .qr-code {
-        width: 750px;
-        height: 750px;
-    }
-}
+@media screen and (max-width: 768px) {
 
-/* For HD screens (1280x720) */
-@media (max-width: 1280px) {
-    .qr-code {
-        width: 500px;
-        height: 500px;
+.qr_scan {
+        margin-top: -33%;
+        margin-left: -374px;
     }
-}
-
-/* For Tablets (1024px wide) */
-@media (max-width: 1024px) {
-    .qr-code {
-        width: 300px;
-        height: 300px;
+    .qr_scan {
+        width: 45%;
     }
-}
+        .scan_div {
+        margin: 455px 200px 0px 0px;
+    }
+        .frame-2 {
 
-/* For Mobile screens */
-@media (max-width: 768px) {
-    .qr-code {
-        width: 150px;
-        height: 150px;
+        width: 80%;
+        top: 40px;
+        left: 40px;
+    }
+        .text-wrapper-3 {
+        font-size: 15px;
+        width: 27%;
     }
 }

@@ -341,3 +341,66 @@ body{
         left: 643px;
     }
 }
+
+
+
+@media (max-width: 1280px) {
+    .PICK-TO-DROP .simplification {
+        width: 257px;
+        height: 936.41px;
+        bottom: 1389px;
+        left: -600px;
+    }
+    .PICK-TO-DROP .frame-3 {
+        left: 613px;
+    }
+    .PICK-TO-DROP .frame-2 {
+        left: 1402px;
+    }
+    .PICK-TO-DROP .image {
+    left: 14px;
+    }
+    .PICK-TO-DROP .image {
+        width: 100%;
+    }
+    .PICK-TO-DROP .ellipse {
+        top: 211px;
+    }
+    .PICK-TO-DROP .frame {
+        width: 30%;
+        top: 368px;
+        left: 484px;
+    }
+    .PICK-TO-DROP .frame-wrapper {
+        width: 100%;
+        top: 533px;
+    }
+    .PICK-TO-DROP .text-wrapper {
+        font-size: 30px;
+    }
+    .PICK-TO-DROP .text-wrapper-2 {
+        margin-top: -58px;
+        font-size: 23px;
+    }
+    .PICK-TO-DROP .div-wrapper {
+        width: 58%;
+        height: 171.06px;
+        bottom: 1647px;
+        left: -497px;
+    }
+    .PICK-TO-DROP .text-wrapper-4 {
+        top: 48px;
+        left: 96px;
+        font-size: 30px;
+    }
+    .PICK-TO-DROP .text-wrapper-3 {
+        top: 46px;
+        left: 59px;
+        font-size: 30px;
+    }
+        .PICK-TO-DROP .frame {
+        width: 30%;
+        top: 327px;
+        left: 454px;
+    }
+}

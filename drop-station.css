@@ -576,6 +576,7 @@ button.disabled {
 }
 .box2 {
     margin-top: 688px;
+    margin-left: 76px;
 }
 .para p {
     font-size: 20px;
@@ -638,6 +639,11 @@ button.disabled {
     padding: 19px 49px;
     font-size: 25px;
 }
+.fig {
+        margin-top: 200px;
+        margin-left: 703px;
+        z-index: 111;
+    }
 }
 
 

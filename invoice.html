@@ -64,7 +64,8 @@
             <div id="qrcode"></div>
           </div>
           <p class="scan-me">
-            <span>Scan Me</span> <br> <span style="font-size:45px; color: #87643a;">To Start Your Dabba Service</span>
+              <span class="scan-text">Scan Me</span> 
+              <span class="dabba-text">To Start Your Dabba Service</span>
           </p>
           <img src="images/scan-me-here.gif" class="qr_scan">
         </div>
@@ -127,15 +128,34 @@
         // Generate WhatsApp deep link
         const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-        // QR code options
+        // Function to get dynamic QR code size based on screen resolution
+        function getQRCodeSize() {
+            if (window.innerWidth >= 4096) {
+                return { width: 750, height: 750 };
+            } else if (window.innerWidth >= 1920) {
+                return { width: 350, height: 350 };
+            } else if (window.innerWidth >= 1280) {
+                return { width: 200, height: 200 };
+            } else if (window.innerWidth >= 1024) {
+                return { width: 300, height: 300 };
+            } else if (window.innerWidth >= 768) {
+                return { width: 250, height: 250 };
+            } else {
+                return { width: 120, height: 120 }; // Default size for small screens
+            }
+        }
+
+        // QR code options with size properties
         const options = {
             color: {
                 dark: "#574d41", // Dark color for the QR code itself
                 light: "#00000000" // Transparent background
-            }
+            },
+            width: getQRCodeSize().width,  // Set dynamic width
+            height: getQRCodeSize().height // Set dynamic height
         };
 
-        // Generate the QR code
+        // Generate the QR code with dynamic resizing
         const qrCodeDiv = document.getElementById("qrcode");
         QRCode.toCanvas(whatsappLink, options, function (error, canvas) {
             if (error) {
@@ -143,13 +163,28 @@
                 return;
             }
 
-            // Append the QR code canvas to the div
-            qrCodeDiv.appendChild(canvas);
+            // Clear previous QR code and append the new canvas
+            qrCodeDiv.innerHTML = ''; // Clear existing QR code
+            qrCodeDiv.appendChild(canvas); // Append the new canvas
+        });
 
-            
+        // Update QR code size dynamically on window resize
+        window.addEventListener("resize", function () {
+            const updatedQRCodeSize = getQRCodeSize();
+            options.width = updatedQRCodeSize.width;
+            options.height = updatedQRCodeSize.height;
+            qrCodeDiv.innerHTML = ''; // Clear previous QR code
+            QRCode.toCanvas(whatsappLink, options, function (error, canvas) {
+                if (error) {
+                    console.error("QR Code generation error:", error);
+                    return;
+                }
+                qrCodeDiv.appendChild(canvas); // Append the resized canvas
+            });
         });
     });
 </script>
+
 
 
 
