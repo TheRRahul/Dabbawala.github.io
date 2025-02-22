@@ -351,12 +351,22 @@ body{
 }
 
 
+
 .PICK-TO-DROP .div-wrapper {
         left: -230px;
     }
 
         .PICK-TO-DROP .simplification {
         margin-left: -230px;
+    }
+
+        .PICK-TO-DROP .frame {
+        width: 3840px;
+    }
+
+        .PICK-TO-DROP .div {
+        width: 3840px;
+        left: 0;
     }
 
 }
