@@ -1069,12 +1069,6 @@ body {
 
 
 
-/*  this is a responsive css  */
-@media screen and (max-width: 3840px) {
-  .stime-stamp-top {
-      margin-top: -235px;
-  }
-}
 
 
 @media screen and (max-width: 1920px) {
@@ -1410,6 +1404,19 @@ body {
 }
 
 
+@media screen and (max-width: 3840px) and (max-height: 2160px) {
+
+.video-map {
+    height: 1254px;
+    margin-top: 23px;
+}
+ 
+    .stime-stamp-top {
+        margin-top: -336px;
+    }
+
+
+}
 
 
 @media screen and (max-width: 1280px) {

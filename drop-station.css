@@ -784,6 +784,24 @@ button.disabled {
 
 
 
+@media screen and (max-width: 3840px) and (max-height: 2160px) {
+.fig-width {
+    width: 362px;
+}
+
+.fig {
+    margin-left: 1450px;
+}
+
+.station-display1 svg {
+    width: 51%;
+}
+
+.station-display1 text {
+    font-size: 33px;
+}
+
+}
 
 /* Media Query for Extra Small Screens (Very small mobile or portrait mode) */
 @media only screen and (max-width: 480px) {

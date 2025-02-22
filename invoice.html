@@ -132,6 +132,8 @@
         function getQRCodeSize() {
             if (window.innerWidth >= 4096) {
                 return { width: 750, height: 750 };
+            } else if (window.innerWidth >= 3840) {
+                return { width: 550, height: 550 };
             } else if (window.innerWidth >= 1920) {
                 return { width: 350, height: 350 };
             } else if (window.innerWidth >= 1280) {
