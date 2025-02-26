@@ -99,7 +99,7 @@
                     <button data-station="kurla" data-marathi="कुर्ला">KURLA</button>
                     <button data-station="ghatkopar" data-marathi="घाटकोपर">GHATKOPAR</button>
                     <button data-station="thane" data-marathi="ठाणे">THANE</button>
-                    <button data-station="dombivali" data-marathi="डोंबिवली">DOMBIVALI</button>
+                    <button data-station="dombivli" data-marathi="डोंबिवली">DOMBIVALI</button>
                 </div>
                 <div class="line">
                     <h3>Harbor Line</h3>
@@ -139,7 +139,7 @@
         "CHURCHGATE": "चर्चगेट",
         "BANDRA": "वांद्रे",
         "ANDHERI": "अंधेरी",
-        "DOMBIVALI":"डोंबिवली",
+        "DOMBIVLI":"डोंबिवली",
         "GHATKOPAR":"घाटकोपर",
         "BYCULLA":"भायखळा",
         "VIRAR":"विरार",
@@ -217,6 +217,12 @@ document.querySelectorAll('.popup-section button').forEach(button => {
         // Store the selected station in localStorage
         localStorage.setItem('selectedDropStation', selectedDropStation);
 
+        // Hide the finger image
+        document.getElementById('finger').style.display = 'none';
+
+        // Stop the audio after station selection
+        stopAudio();
+
         // Set the flag to true when a station is selected
         stationSelected = true;
 
@@ -283,11 +289,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close the popup
     function closePopup() {
-        const popupOverlay = document.getElementById('popupOverlay');
-        popupOverlay.style.display = 'none';
+    const popupOverlay = document.getElementById('popupOverlay');
+    popupOverlay.style.display = 'none';
 
-        // Remove the event listener after closing the popup
-        popupOverlay.removeEventListener('click', handleOutsideClick);
+    // Remove the event listener after closing the popup
+    popupOverlay.removeEventListener('click', handleOutsideClick);
     }
 
     // Function to handle clicks outside the popup content
@@ -360,7 +366,7 @@ function translateToHindi(stationName) {
         "churchgate": "चर्चगेट",
         "bandra": "बांद्रा",
         "andheri": "अंधेरी",
-        "dombivali": "डोंबिवली",
+        "dombivli": "डोंबिवली",
         "ghatkopar": "घाटकोपर",
         "byculla": "भायखला",
         "virar": "विरार",
@@ -387,6 +393,9 @@ document.querySelectorAll('.popup-section button').forEach(button => {
 
 
 <script>
+  // Global variable to store the audio interval ID
+  let audioInterval;
+
   // Function to play the audio
   function playAudio(audioFile) {
     const audio = document.getElementById('pageLoadAudio');
@@ -394,6 +403,14 @@ document.querySelectorAll('.popup-section button').forEach(button => {
     audio.play().catch(error => {
       console.warn('Autoplay blocked by browser. Audio did not play.', error);
     });
+  }
+
+  // Function to stop the audio and clear the interval
+  function stopAudio() {
+    const audio = document.getElementById('pageLoadAudio');
+    audio.pause();
+    audio.currentTime = 0; // Reset to the beginning if needed
+    clearInterval(audioInterval);
   }
 
   // Check for lang query parameter and decide which audio to play
@@ -411,7 +428,7 @@ document.querySelectorAll('.popup-section button').forEach(button => {
     playAudio(audioFile);
 
     // Set an interval to play the sound every 10 seconds (10000ms)
-    setInterval(() => {
+    audioInterval = setInterval(() => {
       playAudio(audioFile);
     }, 10000);  // 10000ms = 10 seconds
   });
@@ -419,7 +436,7 @@ document.querySelectorAll('.popup-section button').forEach(button => {
 
 <!--  -->
 
-<script>
+<!-- <script>
     function toggleFinger() {
         const fingerElement = document.getElementById('finger');
 
@@ -439,7 +456,7 @@ document.querySelectorAll('.popup-section button').forEach(button => {
     }
 
     window.onload = toggleFinger;
-</script>
+</script> -->
 
 </body>
 </html>

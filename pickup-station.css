@@ -53,13 +53,13 @@ body::before {
     /* margin-top: 221px; */
     /* padding-top: 331px; */
     margin-top: 428px;
-    margin-left: 1350px;
+    margin-left: 1457px;
     z-index: 111;
 }
 
-.fig-width{
-    width: 150px;
-    }
+.fig-width {
+    width: 420px;
+}
 
     /* Bouncy image class */
 .bouncy {
@@ -352,7 +352,7 @@ body::before {
 }
 
 .para p {
-    text-align: justify;
+    text-align: left;
     font-family: "Lexend Deca";
     font-size: 40px;
     font-weight: 500;
@@ -808,6 +808,10 @@ body::before {
 @media screen and (max-width: 3840px) and (max-height: 2160px) {
 .fig-width {
     width: 362px;
+}
+
+.box2 {
+    margin-left: 95px;
 }
 
 .fig {

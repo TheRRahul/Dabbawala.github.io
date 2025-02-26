@@ -12,7 +12,8 @@
        // Set the time for redirect (10 minutes = 600,000 milliseconds)
         setTimeout(function() {
             window.location.href = 'index.html'; // Redirect to index.html
-        }, 600000); // 10 minutes
+        }, 600000); 
+        // 10 minutes
   </script>
 </head>
 
@@ -20,23 +21,18 @@
     <audio id="pageLoadAudio" src="sound/voice-station.mp3" autoplay preload="auto"></audio>
 
     <div class="container">
-        <!-- <div class="box box1">
-            <img src="images/station-bg.png" alt="Image 1">
-            <div class="text-overlay" id="button1" class="station-label pickup-station" onclick="openSlider(1)"><p style="color: #fff;">Pick-Up Station</p></div>
-        </div> -->
 
         <div class="box2 heading para">
             <h2>SELECT YOUR PICKUP STATION</h2>
-            <p>Choose a pickup station where the dabbawala will collect your tiffin box from its starting point.<br> At this station, each tiffin is tagged with a unique color-coded identifier to ensure it is routed correctly through the delivery network. This step ensures accuracy and smooth transit.</p>
+            <p>Choose a pickup station where the dabbawala will collect your tiffin box from its starting point. At this station, each tiffin is tagged with a unique color-coded identifier to ensure it is routed correctly through the delivery network. This step ensures accuracy and smooth transit.</p>
 
         </div>
 
-            <div class="fig">
-                <img src="images/finger-img.png" id="finger" class="fig-width bouncy">
-            </div>
+        <div class="fig">
+            <img src="images/finger-img.png" id="finger" class="fig-width bouncy">
+        </div>
 
         <!--  -->
-
 
 
         <div class="box box3 station-sel">
@@ -54,7 +50,7 @@
             </div>
 
             <div class="text-overlay" id="pickupStationLabel" onclick="openPopup()">
-                    <h2>PICK UP STATION ?</h2>
+                <h2>PICK UP STATION ?</h2>
             </div>
 
             <!-- Display selected station at the bstations-selectottom -->
@@ -66,25 +62,14 @@
                     </text>
                 </svg>
             </div>
-
-            
-
-
         </div>
 
-        <!--  -->
 
         <div class="box4 zoom-box">
-            <button id="nextButton" onclick="dropStationPage()">NEXT &nbsp;&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i>
-            </button>
+            <button id="nextButton" onclick="dropStationPage()">NEXT &nbsp;&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
         </div>
-    </div>
 
-
-
-
-
-
+        </div>
 
     <!-- stations -->
 
@@ -111,7 +96,7 @@
                     <button data-station="kurla" data-marathi="कुर्ला">KURLA</button>
                     <button data-station="ghatkopar" data-marathi="घाटकोपर">GHATKOPAR</button>
                     <button data-station="thane" data-marathi="ठाणे">THANE</button>
-                    <button data-station="dombivali" data-marathi="डोंबिवली">DOMBIVALI</button>
+                    <button data-station="dombivli" data-marathi="डोंबिवली">DOMBIVLI</button>
                 </div>
                 <div class="line">
                     <h3>Harbor Line</h3>
@@ -151,7 +136,7 @@
         "CHURCHGATE": "चर्चगेट",
         "BANDRA": "वांद्रे",
         "ANDHERI": "अंधेरी",
-        "DOMBIVALI":"डोंबिवली",
+        "DOMBIVLI":"डोंबिवली",
         "GHATKOPAR":"घाटकोपर",
         "BYCULLA":"भायखळा",
         "VIRAR":"विरार",
@@ -225,6 +210,9 @@
             alert('Selected Pickup Station: ' + station);
         }
 
+
+        
+
     // Handle station selection from the popup
     document.querySelectorAll('.popup-section button').forEach(button => {
         button.addEventListener('click', function() {
@@ -241,6 +229,12 @@
 
             // Store the selected station in localStorage
             localStorage.setItem('selectedPickupStation', selectedPickupStation);
+
+            // Hide the finger image
+            document.getElementById('finger').style.display = 'none';
+
+           // Stop the audio after station selection
+            stopAudio();
 
             // Set the flag to true when a station is selected
             stationSelected = true;
@@ -312,7 +306,7 @@ const hindiStationNames = {
     "kurla": "कुर्ला",
     "ghatkopar": "घाटकोपर",
     "thane": "ठाणे",
-    "dombivali": "डोंबिवली",
+    "dombivli": "डोंबिवली",
     "wadala": "वडाला",
     "vashi": "वाशी"
     // Add more stations as needed
@@ -363,7 +357,7 @@ function translateToHindi(stationName) {
         "churchgate": "चर्चगेट",
         "bandra": "बांद्रा",
         "andheri": "अंधेरी",
-        "dombivali": "डोंबिवली",
+        "dombivli": "डोंबिवली",
         "ghatkopar": "घाटकोपर",
         "byculla": "भायखला",
         "virar": "विरार",
@@ -391,6 +385,9 @@ document.querySelectorAll('.popup-section button').forEach(button => {
 
 
 <script>
+  // Global variable to store the audio interval ID
+  let audioInterval;
+
   // Function to play the audio
   function playAudio(audioFile) {
     const audio = document.getElementById('pageLoadAudio');
@@ -398,6 +395,14 @@ document.querySelectorAll('.popup-section button').forEach(button => {
     audio.play().catch(error => {
       console.warn('Autoplay blocked by browser. Audio did not play.', error);
     });
+  }
+
+  // Function to stop the audio and clear the interval
+  function stopAudio() {
+    const audio = document.getElementById('pageLoadAudio');
+    audio.pause();
+    audio.currentTime = 0; // Reset to the beginning if needed
+    clearInterval(audioInterval);
   }
 
   // Check for lang query parameter and decide which audio to play
@@ -415,7 +420,7 @@ document.querySelectorAll('.popup-section button').forEach(button => {
     playAudio(audioFile);
 
     // Set an interval to play the sound every 10 seconds (10000ms)
-    setInterval(() => {
+    audioInterval = setInterval(() => {
       playAudio(audioFile);
     }, 10000);  // 10000ms = 10 seconds
   });
@@ -427,9 +432,9 @@ document.querySelectorAll('.popup-section button').forEach(button => {
 
 
 
-<!--  -->
 
-<script>
+<!--  -->
+<!-- <script>
     function toggleFinger() {
         const fingerElement = document.getElementById('finger');
 
@@ -449,7 +454,7 @@ document.querySelectorAll('.popup-section button').forEach(button => {
     }
 
     window.onload = toggleFinger;
-</script>
+</script> -->
 
 
 </body>

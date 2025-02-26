@@ -230,6 +230,14 @@ body{
 }
 
 
+.PICK-TO-DROP .simplification1 {
+    position: relative;
+    width: 856.04px;
+    height: 1428.41px;
+    bottom: 899px;
+}
+
+
 .PICK-TO-DROP .div-wrapper {
     width: 150%;
     height: 335.06px;
@@ -348,17 +356,23 @@ body{
 
 .PICK-TO-DROP .image {
     height: 67vh;
+    left: 0px;
 }
 
-
+    .PICK-TO-DROP .simplification1 {
+        bottom: 897px;
+        left: -95px;
+    }
 
 .PICK-TO-DROP .div-wrapper {
         left: -230px;
     }
 
-        .PICK-TO-DROP .simplification {
-        margin-left: -230px;
+    .PICK-TO-DROP .simplification {
+        margin-left: -285px;
+        bottom: 897px;
     }
+    
 
         .PICK-TO-DROP .frame {
         width: 3840px;

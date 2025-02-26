@@ -137,12 +137,13 @@ body::before {
 
 
 
+
 .fig {
     position: absolute;
     /* margin-top: 221px; */
     /* padding-top: 331px; */
     margin-top: 428px;
-    margin-left: 1350px;
+    margin-left: 1457px;
     z-index: 111;
 }
 
@@ -170,9 +171,9 @@ body::before {
   }
 }
 
-.fig-width{
-    width: 150px;
-    }
+.fig-width {
+    width: 420px;
+}
 
 .hidden {
     display: none;
@@ -218,7 +219,7 @@ body::before {
 }
 
 .para p {
-    text-align: justify;
+    text-align: left;
     font-family: "Lexend Deca";
     font-size: 40px;
     font-weight: 500;
@@ -323,7 +324,7 @@ body::before {
 }
 
 .line button:hover {
-    background: #3a3a7c;
+    background: #a3a3a3;
 }
 
 button.disabled {
@@ -788,6 +789,11 @@ button.disabled {
 .fig-width {
     width: 362px;
 }
+
+.box2 {
+    margin-left: 95px;
+}
+
 
 .fig {
     margin-left: 1450px;
